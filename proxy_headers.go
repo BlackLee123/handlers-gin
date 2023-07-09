@@ -102,7 +102,7 @@ func getIP(r *http.Request) string {
 // getScheme retrieves the scheme from the X-Forwarded-Proto and RFC7239
 // Forwarded headers (in that order).
 func getScheme(r *http.Request) string {
-	var scheme string
+	scheme := "http"
 
 	// Retrieve the scheme from X-Forwarded-Proto.
 	if proto := r.Header.Get(xForwardedProto); proto != "" {
